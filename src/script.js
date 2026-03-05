@@ -40,7 +40,66 @@ function closeFlyerModal() {
     }, 300);
 }
 
-// Dynamic event status update
+// Lead Capture Function
+function handleLeadSubmit(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('leadForm');
+    const messageDiv = document.getElementById('leadMessage');
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const interest = document.getElementById('interest').value;
+    
+    // Validate form
+    if (!name || !email || !interest) {
+        showMessage('Please fill in all required fields.', 'error');
+        return;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        showMessage('Please enter a valid email address.', 'error');
+        return;
+    }
+    
+    // Create lead data object
+    const leadData = {
+        name: name,
+        email: email,
+        phone: phone,
+        interest: interest,
+        timestamp: new Date().toISOString(),
+        source: 'SnatchOut Website Lead Capture'
+    };
+    
+    // Store lead (in real app, this would send to backend)
+    console.log('Lead captured:', leadData);
+    
+    // Show success message
+    showMessage(`Thank you ${name}! We've received your information and will contact you soon about ${interest}.`, 'success');
+    
+    // Reset form
+    form.reset();
+    
+    // In a real implementation, you would send this to your backend/email service
+    // Example: sendToCRM(leadData) or emailToAdmin(leadData)
+}
+
+function showMessage(message, type) {
+    const messageDiv = document.getElementById('leadMessage');
+    messageDiv.textContent = message;
+    messageDiv.className = `lead-message ${type}`;
+    messageDiv.style.display = 'block';
+    
+    // Auto-hide message after 5 seconds
+    setTimeout(() => {
+        messageDiv.style.display = 'none';
+    }, 5000);
+}
 function updateEventStatus() {
     const eventDate = new Date('2026-04-25T17:30:00'); // April 25, 2026 at 5:30 PM
     const currentDate = new Date();
