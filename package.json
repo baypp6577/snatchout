@@ -7,13 +7,15 @@
     "dev": "live-server --port=3000 --host=localhost",
     "build": "npm run build:fast",
     "build:fast": "cp src/*.html dist/ && cp src/styles.css dist/ && cp src/script.js dist/",
+    "build:minified": "npm run build-html && npm run build-css && npm run build-js",
     "build-html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --minify-css --minify-js index.html -o dist/index.html",
     "build-css": "cleancss -o dist/styles.min.css src/styles.css",
     "build-js": "terser src/script.js -o dist/script.min.js",
-    "build:minified": "npm run build-html && npm run build-css && npm run build-js",
+    "build:upload": "npm run build:minified && npm run upload",
+    "upload": "vercel --prod",
     "serve": "http-server dist -p 3001",
     "preview": "npm run build && npm run serve",
-    "deploy": "npm run build && vercel --prod"
+    "deploy": "npm run build:upload"
   },
   "keywords": [
     "events",
