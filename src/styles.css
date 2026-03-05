@@ -361,7 +361,7 @@ nav {
 .flyer-container {
     max-width: 900px;
     max-height: 90vh;
-    margin: 20px;
+    margin: auto; /* Equal spacing on all sides */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 20px;
