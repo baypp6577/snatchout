@@ -1,0 +1,24 @@
+{
+  "name": "snatchout-event-management",
+  "version": "1.0.0",
+  "description": "SnatchOut Event Management Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "dev": "live-server --port=3000 --open=/index.html",
+    "serve": "http-server -p 3000 -o",
+    "build": "echo 'No build process needed for static HTML'"
+  },
+  "keywords": [
+    "event",
+    "management",
+    "snatchout",
+    "website"
+  ],
+  "author": "SnatchOut Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1"
+  }
+}
