@@ -22,6 +22,14 @@
             display: block;
         }
 
+        .flyer-modal.closing {
+            animation: fadeOut 0.3s;
+        }
+
+        .flyer-modal.closing .flyer-container {
+            animation: scaleDown 0.3s;
+        }
+
         .flyer-container {
             max-width: 800px;
             margin: 100px auto 50px;
@@ -29,6 +37,10 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .flyer-container.closing {
+            animation: scaleDown 0.3s;
         }
 
         .flyer-header {
@@ -170,6 +182,24 @@
             color: white;
         }
 
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes scaleDown {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0.9);
+            }
+        }
+
         @media (max-width: 768px) {
             .flyer-container {
                 margin: 80px 10px 30px;
@@ -194,6 +224,27 @@
     </style>
 </head>
 <body>
+    <!-- Include Header -->
+    <div data-include="includes/header.html"></div>
+
+    <!-- Main Page Content -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>SnatchOut 2026 Flyer</h1>
+            <p class="subtitle">Event Details</p>
+            
+            <div class="hero-description">
+                <p>View the complete event flyer with all details for SnatchOut 2026.</p>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" onclick="openFlyer()">View Full Flyer</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Flyer Modal -->
     <div class="flyer-modal" id="flyerModal">
         <div class="flyer-container">
@@ -203,7 +254,7 @@
             
             <div class="flyer-header">
                 <h1>SnatchOut 2026</h1>
-                <div class="flyer-date">March 2026</div>
+                <div class="flyer-date">April 2026</div>
                 <p>SnatchOut 2026 Nottingham</p>
             </div>
 
@@ -214,7 +265,7 @@
                     <div class="detail-item">
                         <i class="fas fa-calendar"></i>
                         <div>
-                            <strong>Date:</strong> Saturday, March 25, 2026
+                            <strong>Date:</strong> Saturday, April 25, 2026
                         </div>
                     </div>
                     <div class="detail-item">
@@ -269,20 +320,30 @@
         </div>
     </div>
 
+    <!-- Include Footer -->
+    <div data-include="includes/footer.html"></div>
+
     <!-- Scripts -->
+    <script src="src/includes.js"></script>
     <script src="src/script.js"></script>
     <script>
         // Flyer Modal Functions
         function openFlyer() {
             const modal = document.getElementById('flyerModal');
+            const container = modal.querySelector('.flyer-container');
+            
+            // Remove closing classes if they exist
+            modal.classList.remove('closing');
+            container.classList.remove('closing');
+            
+            // Add active classes
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
 
         function closeFlyer() {
-            const modal = document.getElementById('flyerModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            // Redirect to homepage when modal is closed
+            window.location.href = 'index.html';
         }
 
         // Close flyer when clicking outside
