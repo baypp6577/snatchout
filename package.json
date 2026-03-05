@@ -5,12 +5,13 @@
   "main": "index.html",
   "scripts": {
     "dev": "live-server --port=3000 --host=localhost",
-    "build": "npm run minify-html && npm run minify-css && npm run minify-js",
-    "minify-html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --minify-css --minify-js index.html -o dist/index.html",
-    "minify-css": "cleancss -o dist/styles.min.css src/styles.css",
-    "minify-js": "terser src/script.js -o dist/script.min.js",
+    "build": "npm run build-html && npm run build-css && npm run build-js",
+    "build-html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --minify-css --minify-js index.html -o dist/index.html",
+    "build-css": "cleancss -o dist/styles.min.css src/styles.css",
+    "build-js": "terser src/script.js -o dist/script.min.js",
     "serve": "http-server dist -p 3001",
-    "preview": "npm run build && npm run serve"
+    "preview": "npm run build && npm run serve",
+    "deploy": "npm run build && vercel --prod"
   },
   "keywords": [
     "events",
