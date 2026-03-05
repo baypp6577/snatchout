@@ -7,7 +7,8 @@
     "start": "live-server --port=3000",
     "dev": "live-server --port=3000 --open=/index.html",
     "serve": "http-server -p 3000 -o",
-    "build": "echo 'No build process needed for static HTML'"
+    "build": "if not exist public mkdir public && copy index.html public\\ && copy \"2026_snatchout.jpeg\" public\\ && copy \"Photo from EFC\" public\\",
+    "deploy": "npm run build && vercel --prod"
   },
   "keywords": [
     "event",
