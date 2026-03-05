@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnatchOut 2026 - Event Flyer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    <style>
+        .flyer-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .flyer-modal.active {
+            display: block;
+        }
+
+        .flyer-container {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .flyer-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .flyer-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .flyer-date {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .flyer-content {
+            padding: 40px;
+        }
+
+        .flyer-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .event-details {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .detail-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-item i {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .detail-item strong {
+            color: #667eea;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .flyer-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .flyer-highlights {
+            background: #fff;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .flyer-highlights h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .highlight-list li:last-child {
+            border-bottom: none;
+        }
+
+        .highlight-list i {
+            color: #27ae60;
+            margin-right: 15px;
+        }
+
+        .flyer-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .flyer-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .flyer-close i {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .flyer-container {
+                margin: 80px 10px 30px;
+            }
+
+            .flyer-header h1 {
+                font-size: 2rem;
+            }
+
+            .flyer-content {
+                padding: 20px;
+            }
+
+            .flyer-image {
+                height: 250px;
+            }
+
+            .detail-item {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Flyer Modal -->
+    <div class="flyer-modal" id="flyerModal">
+        <div class="flyer-container">
+            <button class="flyer-close" onclick="closeFlyer()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="flyer-header">
+                <h1>SnatchOut 2026</h1>
+                <div class="flyer-date">March 2026</div>
+                <p>SnatchOut 2026 Nottingham</p>
+            </div>
+
+            <div class="flyer-content">
+                <img src="./2026_snatchout.jpeg" alt="SnatchOut 2026" class="flyer-image">
+
+                <div class="event-details">
+                    <div class="detail-item">
+                        <i class="fas fa-calendar"></i>
+                        <div>
+                            <strong>Date:</strong> Saturday, March 25, 2026
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Time:</strong> 5:30 PM Doors Open
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location:</strong> Mission House - The Dome, Unit 1, Ryan Business Park, Radford Road, Nottingham, NG7 7DH
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div>
+                            <strong>Entry:</strong> Free Entry - Donations Welcome
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flyer-description">
+                    <h3>Berean Study Bible Theme</h3>
+                    <p>
+                        Join us for the Berean Study Bible theme: "Save others by snatching them from the fire; and to still others show mercy tempered with fear, hating even the clothing stained by the flesh." An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.
+                    </p>
+                </div>
+
+                <div class="flyer-highlights">
+                    <h3>Event Highlights</h3>
+                    <ul class="highlight-list">
+                        <li><i class="fas fa-check-circle"></i> Celebration of the resurrection of Christ</li>
+                        <li><i class="fas fa-check-circle"></i> Drawing closer to Christ in worship</li>
+                        <li><i class="fas fa-check-circle"></i> Seeing loved ones come to Christ</li>
+                        <li><i class="fas fa-check-circle"></i> Time of fellowship and celebrations with other believers in Christ</li>
+                    </ul>
+                </div>
+
+                <div class="flyer-actions">
+                    <a href="#" class="btn btn-primary" onclick="openEventbrite()">
+                        <i class="fas fa-shopping-cart"></i> Get Tickets Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                    <a href="index.html#events" class="btn btn-secondary">
+                        <i class="fas fa-calendar"></i> View More Events
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/script.js"></script>
+    <script>
+        // Flyer Modal Functions
+        function openFlyer() {
+            const modal = document.getElementById('flyerModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeFlyer() {
+            const modal = document.getElementById('flyerModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close flyer when clicking outside
+        document.getElementById('flyerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFlyer();
+            }
+        });
+
+        // Close flyer with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFlyer();
+            }
+        });
+
+        // Auto-open flyer when page loads
+        window.addEventListener('load', function() {
+            setTimeout(openFlyer, 500);
+        });
+    </script>
+</body>
+</html>
