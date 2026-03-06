@@ -9,6 +9,10 @@
     "serve": "npx http-server public -p 3000 -o",
     "deploy": "vercel --prod"
   },
+      "files": [
+                "dist",
+                "public"
+             ],
   "keywords": [
     "event",
     "management",
