@@ -499,7 +499,7 @@ nav {
 .flyer-section {
     padding: 40px 20px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    display: none;
+    display: none !important;
 }
 
 .flyer-header-toggle {
@@ -578,7 +578,7 @@ nav {
 }
 
 .flyer-body {
-    padding: 40px;
+    padding: 20px;
     display: none;
 }
 
