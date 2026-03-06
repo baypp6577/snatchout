@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnatchOut - Premier Event Management</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -867,6 +868,12 @@
             setTimeout(calculateHeroHeight, 50);
             setTimeout(calculateHeroHeight, 200);
             setTimeout(calculateHeroHeight, 500);
+            
+            // Set mobile background position
+            const hero = document.querySelector('.hero');
+            if (window.innerWidth <= 768 && hero) {
+                hero.style.backgroundPosition = '22px';
+            }
         });
         
         // Recalculate on window resize with debounce

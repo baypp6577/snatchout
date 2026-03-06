@@ -149,6 +149,24 @@ nav {
     align-items: center;
     gap: 15px;
     font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 4px solid #ffd700;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.event-details-hero .detail-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-details-hero .detail-item:last-child {
+    margin-bottom: 0;
 }
 
 .event-details-hero .detail-item i {
@@ -922,6 +940,7 @@ nav {
         height: auto;
         min-height: 100vh;
         padding: 40px 20px;
+        background-position: 22px;
     }
 
     .hero h1 {
