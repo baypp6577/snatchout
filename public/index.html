@@ -124,9 +124,26 @@
             color: white;
             padding: 0 20px;
             max-width: 800px;
-            animation: fadeInUp 1s ease;
             position: absolute;
-    top: 26px;
+            top: -100px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%) scale(0.8);
+        }
+
+        .hero-content.loaded {
+            top: 2%;
+            left: inherit;
+            width: auto;
+            height: auto;
+            opacity: 1;
+            overflow: visible;
+            transform: translateX(0) translateY(0) scale(1);
+            animation: fadeInUp 1s ease 0.3s both;
         }
 
         .hero h1 {
@@ -819,7 +836,7 @@
             }
         });
 
-        // Dynamic hero height calculation
+        // Dynamic hero height calculation and content animation
         function calculateHeroHeight() {
             const hero = document.querySelector('.hero');
             const heroContent = document.querySelector('.hero-content');
@@ -834,20 +851,21 @@
                 // Calculate minimum height needed for content + nav + padding
                 const minHeight = navHeight + contentHeight + padding;
                 
-                // Set hero height to the larger of viewport or minimum content height
+                // Set hero height to be larger of viewport or minimum content height
                 const calculatedHeight = Math.max(viewportHeight, minHeight);
                 hero.style.height = calculatedHeight + 'px';
                 
-                // Center content vertically
-                heroContent.style.position = 'absolute';
-                heroContent.style.top = '50%';
-                heroContent.style.left = '50%';
-                heroContent.style.transform = 'translate(-50%, -50%)';
+                // Trigger the loaded animation after a short delay
+                setTimeout(() => {
+                    heroContent.classList.add('loaded');
+                }, 100);
             }
         }
 
         // Calculate on page load
-        document.addEventListener('DOMContentLoaded', calculateHeroHeight);
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateHeroHeight();
+        });
         
         // Recalculate on window resize
         window.addEventListener('resize', calculateHeroHeight);
