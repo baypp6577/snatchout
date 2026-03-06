@@ -1,3 +1,8 @@
+/* Hide Vercel Live Feedback Toolbar */
+vercel-live-feedback {
+    display: none !important;
+}
+
 * {
     margin: 0;
     padding: 0;
