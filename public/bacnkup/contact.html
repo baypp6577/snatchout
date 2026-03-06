@@ -8,8 +8,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Include -->
-    <div id="nav-include"></div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-calendar-star"></i>
+                SnatchOut
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#" class="eventbrite-btn" onclick="openEventbrite()">
+                    <i class="fab fa-eventbrite"></i> Eventbrite
+                </a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
     <div class="contact-container">
         <div class="contact-header">
@@ -92,31 +112,73 @@
     </div>
 
     <!-- Footer Section -->
-    <!-- Footer Include -->
-    <div id="footer-include"></div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SnatchOut 2026</h3>
+                    <p>An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="#" onclick="openEventbrite()">Get Tickets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Event Details</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar"></i> Saturday, April 25, 2026</li>
+                        <li><i class="fas fa-clock"></i> 5:30 PM Doors Open</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mission House - The Dome</li>
+                        <li><i class="fas fa-ticket-alt"></i> Free Entry</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/snatchout.ukconcerts" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SnatchOut. All rights reserved. | <a href="#" onclick="openEventbrite()">Get Tickets</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Eventbrite integration
+        function openEventbrite() {
+            window.open('https://www.eventbrite.com/', '_blank');
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
-
-<!-- HTML Includes Script -->
-<script>
-    // Load navigation include
-    fetch('nav.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('nav-include').innerHTML = data;
-            // Set active link for contact page
-            const contactLink = document.querySelector('a[href="contact.html"]');
-            if (contactLink) {
-                contactLink.classList.add('active');
-            }
-        })
-        .catch(error => console.error('Error loading navigation:', error));
-    
-    // Load footer include
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-include').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
-</script>
