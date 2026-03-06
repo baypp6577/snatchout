@@ -71,7 +71,23 @@ function loadIncludes() {
 document.addEventListener('DOMContentLoaded', function() {
     loadIncludes();
     initScrollEffect();
+    initClickOutsideMenu();
 });
+
+// Close menu when clicking outside
+function initClickOutsideMenu() {
+    document.addEventListener('click', function(event) {
+        const nav = document.querySelector('nav');
+        const navLinks = document.getElementById('navLinks');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        // Check if menu is active and click is outside nav
+        if (navLinks && navLinks.classList.contains('active') && 
+            !nav.contains(event.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+}
 
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function() {
