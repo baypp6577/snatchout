@@ -113,7 +113,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('2026_snatchout.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/2026_snatchout.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -247,8 +247,8 @@
         }
 
         .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
+            justify-content: center;
             gap: 30px;
             margin-top: 50px;
         }
@@ -260,6 +260,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
+            max-width: 450px;
+            width: 100%;
         }
 
         .event-card:hover {
@@ -372,6 +374,109 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            color: #ecf0f1;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+            color: #ecf0f1;
+        }
+
+        .footer-section ul li i {
+            color: #ffd700;
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #ffd700;
+            color: #2c3e50;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        .footer-bottom a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -386,7 +491,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#past">Past Events</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="#" class="eventbrite-btn" onclick="openEventbrite()">
                     <i class="fab fa-eventbrite"></i> Eventbrite
                 </a></li>
@@ -445,7 +550,7 @@
                 <!-- Future Event -->
                 <div class="event-card">
                     <span class="event-status status-future">UPCOMING</span>
-                    <img src="./2026_snatchout.jpeg" alt="SnatchOut 2026" class="event-image">
+                    <img src="/2026_snatchout.jpeg" alt="SnatchOut 2026" class="event-image">
                     <div class="event-content">
                         <div class="event-date">April 2026</div>
                         <h3 class="event-title">SnatchOut 2026 Nottingham</h3>
@@ -470,43 +575,14 @@
             window.open('https://www.eventbrite.com/', '_blank');
         }
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
-                nav.style.backdropFilter = 'blur(10px)';
-            } else {
-                nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-                nav.style.backdropFilter = 'none';
-            }
-        });
-    </script>
-</body>
-</html>
-
-        // Eventbrite integration
-        function openEventbrite() {
-            // Replace with your actual Eventbrite URL
-            window.open('https://www.eventbrite.com/', '_blank');
+        // Flyer modal function (placeholder)
+        function openFlyerModal() {
+            // For now, just open Eventbrite or you can add a modal later
+            openEventbrite();
         }
 
         // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -531,5 +607,49 @@
             }
         });
     </script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SnatchOut 2026</h3>
+                    <p>An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#" onclick="openEventbrite()">Get Tickets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Event Details</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar"></i> Saturday, April 25, 2026</li>
+                        <li><i class="fas fa-clock"></i> 5:30 PM Doors Open</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mission House - The Dome</li>
+                        <li><i class="fas fa-ticket-alt"></i> Free Entry</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/snatchout.ukconcerts" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SnatchOut. All rights reserved. | <a href="#" onclick="openEventbrite()">Get Tickets</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

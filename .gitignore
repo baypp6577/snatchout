@@ -4,9 +4,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Production builds
-dist/
-build/
+# Source files (we work from public/)
+index.html
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.svg
+
+# Production builds (keep public/)
+# dist/
+# build/
 
 # Environment variables
 .env
