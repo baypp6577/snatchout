@@ -140,43 +140,8 @@ nav {
 
 
 
-.event-details-hero .detail-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.25);
-    padding: 18px 20px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border-left: 4px solid #ffd700;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
 
-.event-details-hero .detail-item:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
 
-.event-details-hero .detail-item:last-child {
-    margin-bottom: 0;
-}
-
-.event-details-hero .detail-item i {
-    font-size: 1.3rem;
-    color: #ffd700;
-    width: 25px;
-    text-align: center;
-}
-
-.event-details-hero .detail-item span {
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    font-weight: 500;
-}
 
 .hero-description {
     margin-top: 40px !important;
@@ -964,18 +929,7 @@ nav {
 
 
 
-    .event-details-hero .detail-item {
-        font-size: 1rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        text-align: left;
-    }
 
-    .event-details-hero .detail-item i {
-        width: auto;
-        text-align: left;
-    }
 
     .hero-description {
         font-size: 1rem;
@@ -1045,17 +999,6 @@ nav {
 
 
 
-    .event-details-hero .detail-item {
-        font-size: 0.9rem;
-        gap: 6px;
-    }
-
-    .event-details-hero .detail-item span {
-        line-height: 1.4;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        white-space: normal;
-    }
 
     .hero-description {
         font-size: 0.95rem;
@@ -1093,9 +1036,6 @@ nav {
         font-size: 1rem;
     }
 
-    .event-details-hero .detail-item {
-        font-size: 0.85rem;
-    }
 
     .btn {
         font-size: 0.9rem;
