@@ -862,16 +862,27 @@
             }
         }
 
-        // Calculate on page load
+        // Calculate on page load with multiple delays for mobile
         document.addEventListener('DOMContentLoaded', function() {
-            calculateHeroHeight();
+            setTimeout(calculateHeroHeight, 50);
+            setTimeout(calculateHeroHeight, 200);
+            setTimeout(calculateHeroHeight, 500);
         });
         
-        // Recalculate on window resize
-        window.addEventListener('resize', calculateHeroHeight);
+        // Recalculate on window resize with debounce
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(calculateHeroHeight, 100);
+        });
         
-        // Recalculate after images load (in case hero image affects layout)
+        // Recalculate after images load
         window.addEventListener('load', calculateHeroHeight);
+        
+        // Also recalculate on orientation change for mobile
+        window.addEventListener('orientationchange', function() {
+            setTimeout(calculateHeroHeight, 200);
+        });
     </script>
 
     <!-- Footer Section -->
