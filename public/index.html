@@ -838,6 +838,14 @@
                 const calculatedHeight = Math.max(viewportHeight, minHeight);
                 hero.style.height = calculatedHeight + 'px';
                 
+                // Set background position for mobile only
+                if (window.innerWidth <= 768) {
+                    hero.style.backgroundPosition = '20px center';
+                } else {
+                    // Reset to default on desktop
+                    hero.style.backgroundPosition = '';
+                }
+                
                 // Trigger the loaded animation after a short delay
                 setTimeout(() => {
                     heroContent.classList.add('loaded');
