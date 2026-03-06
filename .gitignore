@@ -16,6 +16,17 @@ yarn-error.log*
 .env.local
 .env.development.local
 .env.test.local
+
+# Vercel CLI files
+.vercel/
+.vercel/output/
+.vercel/.local/
+.vercel/.cache/
+.vercel/deployment-id
+.vercel/project.json
+.vercel/state.json
+.vercel/build/
+.vercel/dist/
 .env.production.local
 
 # IDE files

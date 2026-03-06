@@ -9,10 +9,25 @@
     "serve": "npx http-server public -p 3000 -o",
     "deploy": "vercel --prod"
   },
-      "files": [
-                "dist",
-                "public"
-             ],
+  "builds": [
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
+    }
+  ],
+  "files": [
+    "dist",
+    "public"
+  ],
   "keywords": [
     "event",
     "management",
