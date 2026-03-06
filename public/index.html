@@ -529,12 +529,12 @@
             </div>
 
             <div class="hero-description">
-                <p>An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.</p>
+                <p style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2);">An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.</p>
             </div>
 
             <div class="hero-buttons">
                 <a href="#events" class="btn btn-primary">Explore Events</a>
-                <a href="#" class="btn btn-secondary" onclick="openFlyerModal()">View Full Flyer</a>
+                <a href="#" class="btn btn-secondary" onclick="openFlyerModal()" style="display: none;">View Full Flyer</a>
                 <a href="#" class="btn btn-primary" onclick="openEventbrite()">Book Now</a>
             </div>
         </div>
@@ -561,6 +561,158 @@
         </div>
     </section>
 
+    <!-- Collapsible Flyer Section -->
+    <section class="flyer-section" id="flyerSection">
+        <div class="container">
+            <div class="flyer-header-toggle">
+                <h2 class="section-title">Event Flyer</h2>
+                <button class="flyer-toggle-btn" onclick="toggleFlyer()" id="flyerToggleBtn">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>View Full Flyer</span>
+                </button>
+            </div>
+            
+            <div class="flyer-content" id="flyerContent">
+                <div class="flyer-container">
+                    <div class="flyer-header">
+                        <h1>SnatchOut 2026</h1>
+                        <div class="flyer-date">April 2026</div>
+                        <p>SnatchOut 2026 Nottingham</p>
+                    </div>
+
+                    <div class="flyer-body">
+                        <img src="/2026_snatchout.jpeg" alt="SnatchOut 2026" class="flyer-image">
+
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <div>
+                                    <strong>Date:</strong> Saturday, April 25, 2026
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Time:</strong> 5:30 PM Doors Open
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Location:</strong> Mission House - The Dome, Unit 1, Ryan Business Park, Radford Road, Nottingham, NG7 7DH
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <div>
+                                    <strong>Entry:</strong> Free Entry - Donations Welcome
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flyer-description">
+                            <h3>Berean Study Bible Theme</h3>
+                            <p>
+                                Join us for the Berean Study Bible theme: "Save others by snatching them from the fire; and to still others show mercy tempered with fear, hating even the clothing stained by the flesh." An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.
+                            </p>
+                        </div>
+
+                        <div class="flyer-highlights">
+                            <h3>Event Highlights</h3>
+                            <ul class="highlight-list">
+                                <li><i class="fas fa-check-circle"></i> Celebration of the resurrection of Christ</li>
+                                <li><i class="fas fa-check-circle"></i> Drawing closer to Christ in worship</li>
+                                <li><i class="fas fa-check-circle"></i> Seeing loved ones come to Christ</li>
+                                <li><i class="fas fa-check-circle"></i> Time of fellowship and celebrations with other believers in Christ</li>
+                            </ul>
+                        </div>
+
+                        <div class="flyer-actions">
+                            <a href="#" class="btn btn-primary" onclick="openEventbrite()">
+                                <i class="fas fa-shopping-cart"></i> Get Tickets Now
+                            </a>
+                            <a href="contact.html" class="btn btn-secondary">
+                                <i class="fas fa-phone"></i> Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flyer Modal -->
+    <div class="flyer-modal" id="flyerModal">
+        <div class="flyer-modal-container">
+            <button class="flyer-close" onclick="closeFlyerModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="flyer-modal-header">
+                <h1>SnatchOut 2026</h1>
+                <div class="flyer-date">April 2026</div>
+                <p>SnatchOut 2026 Nottingham</p>
+            </div>
+
+            <div class="flyer-modal-content">
+                <img src="/2026_snatchout.jpeg" alt="SnatchOut 2026" class="flyer-modal-image">
+
+                <div class="event-details">
+                    <div class="detail-item">
+                        <i class="fas fa-calendar"></i>
+                        <div>
+                            <strong>Date:</strong> Saturday, April 25, 2026
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Time:</strong> 5:30 PM Doors Open
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location:</strong> Mission House - The Dome, Unit 1, Ryan Business Park, Radford Road, Nottingham, NG7 7DH
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div>
+                            <strong>Entry:</strong> Free Entry - Donations Welcome
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flyer-description">
+                    <h3>Berean Study Bible Theme</h3>
+                    <p>
+                        Join us for the Berean Study Bible theme: "Save others by snatching them from the fire; and to still others show mercy tempered with fear, hating even the clothing stained by the flesh." An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.
+                    </p>
+                </div>
+
+                <div class="flyer-highlights">
+                    <h3>Event Highlights</h3>
+                    <ul class="highlight-list">
+                        <li><i class="fas fa-check-circle"></i> Celebration of the resurrection of Christ</li>
+                        <li><i class="fas fa-check-circle"></i> Drawing closer to Christ in worship</li>
+                        <li><i class="fas fa-check-circle"></i> Seeing loved ones come to Christ</li>
+                        <li><i class="fas fa-check-circle"></i> Time of fellowship and celebrations with other believers in Christ</li>
+                    </ul>
+                </div>
+
+                <div class="flyer-actions">
+                    <a href="#" class="btn btn-primary" onclick="openEventbrite()">
+                        <i class="fas fa-shopping-cart"></i> Get Tickets Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         function toggleMenu() {
@@ -574,10 +726,69 @@
             window.open('https://www.eventbrite.com/', '_blank');
         }
 
-        // Flyer modal function (placeholder)
+        // Flyer modal functions
         function openFlyerModal() {
-            // For now, just open Eventbrite or you can add a modal later
-            openEventbrite();
+            const modal = document.getElementById('flyerModal');
+            const container = modal.querySelector('.flyer-modal-container');
+            
+            // Remove closing classes if they exist
+            modal.classList.remove('closing');
+            container.classList.remove('closing');
+            
+            // Add active classes
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeFlyerModal() {
+            const modal = document.getElementById('flyerModal');
+            const container = modal.querySelector('.flyer-modal-container');
+            
+            // Add closing classes for animation
+            modal.classList.add('closing');
+            container.classList.add('closing');
+            
+            // Wait for animation to complete, then hide modal
+            setTimeout(() => {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        }
+
+        // Close flyer when clicking outside
+        document.getElementById('flyerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFlyerModal();
+            }
+        });
+
+        // Close flyer with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFlyerModal();
+            }
+        });
+
+        // Flyer toggle function (for collapsible section)
+        function toggleFlyer() {
+            const content = document.getElementById('flyerContent');
+            const button = document.getElementById('flyerToggleBtn');
+            const icon = button.querySelector('i');
+            const text = button.querySelector('span');
+            
+            if (content.classList.contains('expanded')) {
+                // Collapse
+                content.classList.remove('expanded');
+                button.classList.remove('expanded');
+                icon.className = 'fas fa-chevron-down';
+                text.textContent = 'View Full Flyer';
+            } else {
+                // Expand
+                content.classList.add('expanded');
+                button.classList.add('expanded');
+                icon.className = 'fas fa-chevron-up';
+                text.textContent = 'Hide Flyer';
+            }
         }
 
         // Smooth scrolling
