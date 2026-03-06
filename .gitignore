@@ -36,3 +36,5 @@ logs/
 .cache/
 .npm/
 .eslintcache
+
+.vercel

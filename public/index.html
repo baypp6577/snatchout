@@ -125,6 +125,8 @@
             padding: 0 20px;
             max-width: 800px;
             animation: fadeInUp 1s ease;
+            position: absolute;
+    top: 26px;
         }
 
         .hero h1 {
@@ -816,6 +818,42 @@
                 nav.style.backdropFilter = 'none';
             }
         });
+
+        // Dynamic hero height calculation
+        function calculateHeroHeight() {
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            const nav = document.querySelector('nav');
+            
+            if (hero && heroContent && nav) {
+                const navHeight = nav.offsetHeight;
+                const contentHeight = heroContent.offsetHeight;
+                const viewportHeight = window.innerHeight;
+                const padding = 40; // Extra padding for breathing room
+                
+                // Calculate minimum height needed for content + nav + padding
+                const minHeight = navHeight + contentHeight + padding;
+                
+                // Set hero height to the larger of viewport or minimum content height
+                const calculatedHeight = Math.max(viewportHeight, minHeight);
+                hero.style.height = calculatedHeight + 'px';
+                
+                // Center content vertically
+                heroContent.style.position = 'absolute';
+                heroContent.style.top = '50%';
+                heroContent.style.left = '50%';
+                heroContent.style.transform = 'translate(-50%, -50%)';
+            }
+        }
+
+        // Calculate on page load
+        document.addEventListener('DOMContentLoaded', calculateHeroHeight);
+        
+        // Recalculate on window resize
+        window.addEventListener('resize', calculateHeroHeight);
+        
+        // Recalculate after images load (in case hero image affects layout)
+        window.addEventListener('load', calculateHeroHeight);
     </script>
 
     <!-- Footer Section -->
