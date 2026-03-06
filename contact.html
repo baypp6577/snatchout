@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SnatchOut 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-calendar-star"></i>
+                SnatchOut
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="#" class="eventbrite-btn" onclick="openEventbrite()">
+                    <i class="fab fa-eventbrite"></i> Eventbrite
+                </a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contact SnatchOut 2026</h1>
+            <p>Get in touch for event information and updates</p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Event Location -->
+            <div class="contact-section">
+                <h2><i class="fas fa-map-marker-alt"></i> Event Location</h2>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <span><strong>Mission House - The Dome</strong></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Unit 1, Ryan Business Park, Radford Road, Nottingham, NG7 7DH</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="contact-section">
+                <h2><i class="fas fa-map"></i> Satellite Navigation</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.123456789!2d-1.123456789!3d52.950000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c2b123456789%3A0x123456789abcdef!2sRyan%20Business%20Park%2C%20Radford%20Road%2C%20Nottingham%20NG7%207DH!5e0!3m2!1sen!2suk!4v1234567890123"
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-actions">
+                    <a href="https://maps.google.com/?q=The+Dome,+Unit+1,+Ryan+Business+Park,+Radford+Road,+Nottingham,+NG7+7DH" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=The+Dome,+Unit+1,+Ryan+Business+Park,+Radford+Road,+Nottingham,+NG7+7DH" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-search"></i> Search on Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="contact-section">
+                <h2><i class="fas fa-share-alt"></i> Connect With Us</h2>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/snatchout.ukconcerts" target="_blank" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: #666;">
+                    Follow us on Facebook for updates and announcements
+                </p>
+            </div>
+
+            <!-- Event Information -->
+            <div class="contact-section">
+                <h2><i class="fas fa-calendar-alt"></i> Event Information</h2>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <span><strong>Date:</strong> Saturday, April 25, 2026</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span><strong>Time:</strong> 5:30 PM Doors Open</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span><strong>Entry:</strong> Free Entry - Donations Welcome</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SnatchOut 2026</h3>
+                    <p>An unforgettable worship experience to King Jesus, featuring humble worship leaders and ministers, an amazing atmosphere, and memories that will last a lifetime.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#events">Events</a></li>
+                        <li><a href="#" onclick="openEventbrite()">Get Tickets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Event Details</h4>
+                    <ul>
+                        <li><i class="fas fa-calendar"></i> Saturday, April 25, 2026</li>
+                        <li><i class="fas fa-clock"></i> 5:30 PM Doors Open</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Mission House - The Dome</li>
+                        <li><i class="fas fa-ticket-alt"></i> Free Entry</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/snatchout.ukconcerts" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SnatchOut. All rights reserved. | <a href="#" onclick="openEventbrite()">Get Tickets</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Eventbrite integration
+        function openEventbrite() {
+            window.open('https://www.eventbrite.com/', '_blank');
+        }
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
