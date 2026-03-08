@@ -463,6 +463,48 @@ nav {
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+/* Eventbrite specific styling */
+.social-link .fab.fa-eventbrite,
+.social-link:has(.fab.fa-eventbrite) {
+    background: #ff6b35 !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.social-link .fab.fa-eventbrite:before {
+    content: "E";
+}
+
+/* Alternative approach - target the social link containing eventbrite */
+.social-link[title="Eventbrite"] {
+    background: #ff6b35 !important;
+    color: white !important;
+}
+
+/* More specific approach - target any social-link with eventbrite class */
+a.social-link[title="Eventbrite"],
+a.social-link:has(.fa-eventbrite),
+div.social-links a[title="Eventbrite"] {
+    background: #ff6b35 !important;
+    background-image: none !important;
+    color: white !important;
+}
+
+a.social-link[title="Eventbrite"] i,
+a.social-link:has(.fa-eventbrite) i,
+div.social-links a[title="Eventbrite"] i {
+    background: #ff6b35 !important;
+    color: white !important;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

@@ -4,9 +4,10 @@
   "description": "SnatchOut Event Management Website",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server public -p 3000",
-    "dev": "npx http-server public -p 3000 -o",
-    "serve": "npx http-server public -p 3000 -o",
+    "start": "npx http-server public -a localhost -p 5174 --cors",
+    "dev": "npx http-server public -a localhost -p 5174 -o --cors",
+    "serve": "npx http-server public -a localhost -p 5174 -o --cors",
+    "dev-auto": "npx http-server public -a localhost -o --cors",
     "deploy": "vercel --prod"
   },
   "builds": [

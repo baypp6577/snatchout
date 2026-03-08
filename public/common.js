@@ -74,6 +74,39 @@ document.addEventListener('DOMContentLoaded', function() {
     initClickOutsideMenu();
 });
 
+// Flyer toggle function
+function toggleFlyer() {
+    console.log('toggleFlyer called');
+    const content = document.getElementById('flyerContent');
+    const button = document.getElementById('flyerToggleBtn');
+    
+    if (!content || !button) {
+        console.error('Flyer elements not found:', { content, button });
+        return;
+    }
+    
+    const icon = button.querySelector('i');
+    const text = button.querySelector('span');
+    
+    console.log('Current state:', content.classList.contains('expanded'));
+    
+    if (content.classList.contains('expanded')) {
+        // Collapse
+        content.classList.remove('expanded');
+        button.classList.remove('expanded');
+        icon.className = 'fas fa-chevron-down';
+        text.textContent = 'View Full Flyer';
+        console.log('Collapsed flyer');
+    } else {
+        // Expand
+        content.classList.add('expanded');
+        button.classList.add('expanded');
+        icon.className = 'fas fa-chevron-up';
+        text.textContent = 'Hide Flyer';
+        console.log('Expanded flyer');
+    }
+}
+
 // Close menu when clicking outside
 function initClickOutsideMenu() {
     document.addEventListener('click', function(event) {
