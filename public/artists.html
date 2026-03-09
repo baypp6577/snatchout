@@ -124,7 +124,7 @@
         /* Hero Section */
         .hero {
             margin-top: 70px;
-            padding: 60px 20px;
+            padding: 0px 20px 40px 20px;
             text-align: center;
             color: white;
             position: relative;
@@ -523,37 +523,26 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Artist Videos</h1>
-            <p class="subtitle">Experience Worship Through Music</p>
-            <div class="hero-description">
-                <p>Watch powerful worship performances and music videos from SnatchOut artists including JFlow and our guest ministers. Be inspired and drawn closer to God through these anointed worship experiences.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Videos Section -->
-    <section class="videos-section">
+    <section class="videos-section" style="margin-top: 70px; padding: 20px 20px 60px 20px;">
         <div class="container">
             <!-- Featured Video -->
             <div class="featured-video">
                 <div class="featured-video-header">
                     <h2><i class="fas fa-star"></i> Featured Performance</h2>
-                    <p>JFlow - "SnatchOut Anthem"</p>
+                    <p>Jflow - Beautiful Day Remix</p>
                 </div>
                 <div class="featured-video-content">
                     <div class="video-embed">
                         <iframe src="https://www.youtube.com/embed/vsrwxbRSuYQ" 
-                                title="JFlow - SnatchOut Anthem" 
+                                title="Jflow - Beautiful Day Remix" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                         </iframe>
                     </div>
                     <div class="featured-info">
-                        <h3>JFlow - SnatchOut Anthem</h3>
-                        <p>An electrifying worship performance that captures the heart and soul of the SnatchOut movement. Join JFlow in this powerful declaration of faith and revival.</p>
+                        <h3>Jflow - Beautiful Day Remix</h3>
+                        <p>An uplifting worship performance that celebrates God's goodness and the beauty of each day. Join Jflow in this powerful declaration of faith and joy.</p>
                         <a href="#" class="watch-btn" onclick="openEventbrite()">
                             <i class="fas fa-calendar"></i> Book Live Performance
                         </a>
@@ -564,29 +553,105 @@
             <!-- Section Title -->
             <h2 class="section-title">More Artist Videos</h2>
             
-            <!-- Videos Grid -->
-            <div class="videos-grid">
-                <!-- Video 1 -->
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="https://img.youtube.com/vi/vsrwxbRSuYQ/maxresdefault.jpg" alt="JFlow Worship Session">
-                        <div class="play-button" onclick="openVideo('vsrwxbRSuYQ')">
-                            <i class="fas fa-play"></i>
-                        </div>
+            <!-- Coming Soon Message -->
+            <div class="coming-soon-container">
+                <div class="coming-soon-card">
+                    <div class="coming-soon-icon">
+                        <i class="fas fa-music"></i>
                     </div>
-                    <div class="video-content">
-                        <h3 class="video-title">JFlow Worship Session</h3>
-                        <p class="video-description">An intimate worship session featuring JFlow leading powerful praise and worship.</p>
-                        <div class="video-meta">
-                            <span class="video-artist">JFlow</span>
-                            <span>15:32</span>
-                        </div>
-                        <a href="#" class="watch-btn" onclick="openVideo('vsrwxbRSuYQ')">
-                            <i class="fas fa-play"></i> Watch Now
+                    <h3>More Artists Coming Soon</h3>
+                    <p>We're working on bringing more talented worship artists and ministers to SnatchOut. Stay tuned for additional video content and performances!</p>
+                    <div class="coming-soon-actions">
+                        <a href="https://open.spotify.com/artist/0CeWpgq7Kk25KXyyAWbYOy?si=FK_TxcvtSpiZXCN2yZviCA&nd=1&dlsi=4e86cc4fabf4446d" target="_blank" class="watch-btn">
+                            <i class="fab fa-spotify"></i> Follow JFlow on Spotify
+                        </a>
+                        <a href="#" class="watch-btn" onclick="openEventbrite()">
+                            <i class="fas fa-calendar"></i> Get Event Updates
                         </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Add styling for coming soon section -->
+            <style>
+                .coming-soon-container {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 60px;
+                }
+
+                .coming-soon-card {
+                    background: white;
+                    border-radius: 20px;
+                    padding: 50px 40px;
+                    text-align: center;
+                    max-width: 600px;
+                    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+                    border: 2px solid #667eea;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .coming-soon-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 5px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                }
+
+                .coming-soon-icon {
+                    font-size: 4rem;
+                    color: #667eea;
+                    margin-bottom: 25px;
+                    animation: pulse 2s infinite;
+                }
+
+                .coming-soon-card h3 {
+                    font-size: 2rem;
+                    color: #333;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                }
+
+                .coming-soon-card p {
+                    color: #666;
+                    line-height: 1.6;
+                    margin-bottom: 30px;
+                    font-size: 1.1rem;
+                }
+
+                .coming-soon-actions {
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                @keyframes pulse {
+                    0% { transform: scale(1); }
+                    50% { transform: scale(1.05); }
+                    100% { transform: scale(1); }
+                }
+
+                @media (max-width: 768px) {
+                    .coming-soon-card {
+                        padding: 40px 30px;
+                        margin: 0 20px;
+                    }
+
+                    .coming-soon-actions {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .coming-soon-card h3 {
+                        font-size: 1.5rem;
+                    }
+                }
+            </style>
 
             <!-- Artist Links Section -->
             <div class="artist-links">
