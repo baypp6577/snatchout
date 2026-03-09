@@ -651,6 +651,14 @@
                         font-size: 1.5rem;
                     }
                 }
+
+                /* Location Image Styling */
+                .location-image img {
+                    width: 100%;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                    object-fit: cover;
+                }
             </style>
 
             <!-- Artist Links Section -->
@@ -661,6 +669,44 @@
                         <i class="fab fa-spotify"></i>
                         <h3>JFlow Spotify</h3>
                         <p>Stream worship music on Spotify</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-container" id="contact">
+        <div class="contact-header">
+            <h1>Contact SnatchOut 2026</h1>
+            <p>Join us for an unforgettable worship experience</p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Event Location -->
+            <div class="contact-section">
+                <h2><i class="fas fa-map-marker-alt"></i> Event Location</h2>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <span><strong>Mission House - The Dome</strong></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-location-dot"></i>
+                        <span><strong>Unit 1, Ryan Business Park, Radford Road, Nottingham, NG7 7DH</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="contact-section">
+                <h2><i class="fas fa-share-alt"></i> Connect With Us</h2>
+                <div class="social-media">
+                    <a href="#" onclick="openEventbrite()" target="_blank" class="social-link" title="Eventbrite">
+                        <i class="fab fa-eventbrite"></i>
+                    </a>
+                    <a href="https://www.facebook.com/snatchout.ukconcerts" target="_blank" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                 </div>
             </div>
@@ -692,7 +738,10 @@
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('footer-include').innerHTML = data;
+                const footerContainer = document.getElementById('footer-include');
+                if (footerContainer) {
+                    footerContainer.innerHTML = data;
+                }
             })
             .catch(error => console.error('Error loading footer:', error));
 

@@ -657,6 +657,9 @@
                         <i class="fas fa-location-dot"></i>
                         <span><strong>Unit 1, Ryan Business Park, Radford Road, Nottingham, NG7 7DH</strong></span>
                     </div>
+                    <div class="location-image" style="text-align: center; margin: 20px 0;">
+                        <img src="/images/location/missionHouse.jpeg" alt="Mission House - The Dome" style="width: 100%; max-width: 400px; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); object-fit: cover;">
+                    </div>
                 </div>
             </div>
 
@@ -939,10 +942,10 @@
         // Add scroll effect to navigation
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
+            if (nav && window.scrollY > 50) {
                 nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
                 nav.style.backdropFilter = 'blur(10px)';
-            } else {
+            } else if (nav) {
                 nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
                 nav.style.backdropFilter = 'none';
             }
