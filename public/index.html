@@ -558,6 +558,55 @@
             text-decoration: underline;
         }
 
+        /* Organizers Section */
+        .organizers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .organizer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .organizer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .organizer-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .organizer-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .organizer-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
@@ -689,6 +738,34 @@
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+                </div>
+            </div>
+
+            <!-- Event Organizers -->
+            <div class="contact-section">
+                <h2><i class="fas fa-users"></i> Event Organizers</h2>
+                <div class="organizers-grid">
+                    <div class="organizer-card">
+                        <div class="organizer-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3>Nottingham Outreach Tem</h3>
+                        <p>Community outreach and ministry organization serving the Nottingham area with faith-based programs and events.</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="organizer-icon">
+                            <i class="fas fa-calendar-star"></i>
+                        </div>
+                        <h3>Snatchout</h3>
+                        <p>Worship event organization dedicated to creating powerful worship experiences and bringing people closer to God.</p>
+                    </div>
+                    <div class="organizer-card">
+                        <div class="organizer-icon">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <h3>EFC</h3>
+                        <p>Evangelical Fellowship Church committed to spreading the gospel and building strong faith communities.</p>
+                    </div>
                 </div>
             </div>
         </div>
