@@ -973,11 +973,62 @@
     <!-- Footer Include -->
     <div id="footer-include"></div>
 
+    <!-- Countdown Include -->
+    <div id="countdown-include"></div>
+
     <script>
         // Include footer
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-include').innerHTML = data);
+        
+        // Include countdown
+        fetch('countdown-include.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('countdown-include').innerHTML = data);
+        
+        // Countdown timer
+        const eventDate = new Date('April 25, 2026 17:30:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                const countdownElement = document.getElementById('countdown');
+                if (countdownElement) {
+                    countdownElement.innerHTML = '<div class="countdown-item"><span class="countdown-number">EVENT</span><span class="countdown-text">NOW!</span></div>';
+                }
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+
+            if (daysElement) daysElement.textContent = String(days).padStart(2, '0');
+            if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
+            if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
+            if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Poll for countdown elements before starting
+        function startCountdownWhenReady() {
+            if (document.getElementById('days') && document.getElementById('hours') && document.getElementById('minutes') && document.getElementById('seconds')) {
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            } else {
+                setTimeout(startCountdownWhenReady, 100);
+            }
+        }
+
+        startCountdownWhenReady();
         
         // Mobile menu toggle
         function toggleMenu() {
