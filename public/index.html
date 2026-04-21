@@ -617,6 +617,167 @@
                 justify-content: center;
             }
         }
+
+        /* Booking Section Styles */
+        .booking-section {
+            padding: 80px 20px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .booking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .booking-text {
+            padding: 20px;
+        }
+
+        .booking-title {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .booking-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .booking-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .highlight-item i {
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+
+        .booking-action {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .booking-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #ff5a5f 0%, #ff4757 100%);
+            color: white !important;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 90, 95, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .booking-btn:hover::before {
+            left: 100%;
+        }
+
+        .booking-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 90, 95, 0.4);
+            background: linear-gradient(135deg, #ff4757 0%, #ff5a5f 100%);
+        }
+
+        .booking-btn i {
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .booking-note {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .booking-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .booking-title {
+                font-size: 1.8rem;
+            }
+
+            .booking-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .booking-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .highlight-item {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -648,7 +809,7 @@
                 </div>
                 <div class="detail-item">
                     <i class="fas fa-microphone"></i>
-                    <span><strong>Ministering : JFlow & Guest Artists</strong></span>
+                    <span><strong>Ministering : JFlow, Christiana & Guest Artists</strong></span>
                 </div>
             </div>
 
@@ -660,6 +821,39 @@
                 <a href="#events" class="btn btn-primary">Explore Events</a>
                 <a href="artists.html" class="btn btn-secondary">Watch Artist Videos</a>
                 <a href="#" class="btn btn-primary" onclick="openEventbrite()">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-text">
+                    <h2 class="booking-title">Secure Your Spot for SnatchOut 2026</h2>
+                    <p class="booking-subtitle">Free entry with donations welcome - Reserve your place today!</p>
+                    <div class="booking-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Limited capacity available</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Priority seating for early bookings</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Complimentary refreshments for early bookings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-action">
+                    <a href="#" class="booking-btn" onclick="openEventbrite()">
+                        <i class="fas fa-ticket-alt"></i>
+                        Book Your Free Ticket Now
+                    </a>
+                    <p class="booking-note">🎉 Join hundreds of worshippers for this unforgettable night!</p>
+                </div>
             </div>
         </div>
     </section>
