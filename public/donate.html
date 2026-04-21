@@ -36,7 +36,7 @@
     
     <!-- Styles -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles-v1.css" rel="stylesheet">
     
     <style>
         .donate-container {
@@ -166,17 +166,6 @@
             font-weight: 600;
         }
         
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .impact-item {
-            text-align: center;
-            padding: 20px;
-        }
-        
         .impact-icon {
             width: 60px;
             height: 60px;
@@ -276,35 +265,39 @@
                 <h3 class="card-title">Support SnatchOut 2026</h3>
                 <p class="card-description">Your donation helps us spread the Gospel across UK communities</p>
                 
-                <div style="margin: 20px 0;">
-                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 30px; border-radius: 15px; border: 2px solid #667eea;">
-                        <div style="text-align: center; margin-bottom: 30px;">
-                            <h4 style="color: #333; margin-bottom: 10px;">Choose Your Donation Amount</h4>
-                            <p style="color: #666; font-size: 0.9rem;">Every gift helps us reach more people for Christ</p>
+                <div class="donation-wrapper">
+                    <div class="amount-selector">
+                        <div class="amount-header">
+                            <h4>Choose Your Donation Amount</h4>
+                            <p>Every gift helps us reach more people for Christ</p>
                         </div>
                         
                         <!-- Preset Amount Buttons -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 25px;">
-                            <button onclick="setAmount(10)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£10</button>
-                            <button onclick="setAmount(25)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£25</button>
-                            <button onclick="setAmount(50)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£50</button>
-                            <button onclick="setAmount(100)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£100</button>
-                            <button onclick="setAmount(250)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£250</button>
-                            <button onclick="setAmount(500)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£500</button>
+                        <div id="preset-amounts">
+                            <div class="table-row">
+                                <button onclick="setAmount(10)" class="amount-btn">£10</button>
+                                <button onclick="setAmount(25)" class="amount-btn">£25</button>
+                                <button onclick="setAmount(50)" class="amount-btn">£50</button>
+                            </div>
+                            <div class="table-row">
+                                <button onclick="setAmount(100)" class="amount-btn">£100</button>
+                                <button onclick="setAmount(250)" class="amount-btn">£250</button>
+                                <button onclick="setAmount(500)" class="amount-btn">£500</button>
+                            </div>
                         </div>
                         
                         <!-- Custom Amount Input -->
-                        <div style="margin-bottom: 25px;">
-                            <label style="display: block; margin-bottom: 10px; color: #333; font-weight: 600;">Or enter custom amount:</label>
-                            <input type="number" id="customAmountInput" placeholder="Enter amount (£)" min="1" style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1.1rem;">
+                        <div class="custom-amount-wrapper">
+                            <label class="custom-amount-label">Or enter custom amount:</label>
+                            <input type="number" id="customAmountInput" placeholder="Enter amount (£)" min="1" class="custom-amount-input">
                         </div>
                         
                         <!-- Donate Button -->
-                        <button onclick="openPayPalWithAmount()" style="width: 100%; padding: 18px; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);">
+                        <button onclick="openPayPalWithAmount()" class="donate-btn">
                             <i class="fas fa-heart"></i> Donate Now with PayPal
                         </button>
                         
-                        <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                        <p class="secure-payment-note">
                             <i class="fas fa-lock"></i> Secure payment via PayPal - You'll enter your amount on PayPal's site
                         </p>
                     </div>

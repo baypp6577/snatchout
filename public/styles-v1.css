@@ -1543,3 +1543,198 @@ div.social-links a[title="Eventbrite"] i:before {
                 justify-content: center;
             }
         }
+
+        /* Donation Page Styles */
+        #preset-amounts {
+            display: table;
+            width: 100%;
+            margin-bottom: 25px;
+            border-collapse: separate;
+            border-spacing: 12px;
+        }
+
+        .table-row {
+            display: table-row;
+        }
+
+        .table-row .amount-btn {
+            display: table-cell !important;
+            width: 33.33%;
+        }
+
+        .donation-wrapper {
+            margin: 20px 0;
+        }
+
+        .amount-selector {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #667eea;
+        }
+
+        .amount-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .amount-header h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .amount-header p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .amount-btn {
+            padding: 15px;
+            border: 2px solid #667eea;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .amount-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .amount-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .custom-amount-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .custom-amount-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .custom-amount-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        .custom-amount-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .donate-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .secure-payment-note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Donation Page Mobile Responsive */
+        @media (max-width: 768px) {
+            .donate-container {
+                margin: 100px auto 20px;
+                padding: 20px 15px;
+            }
+            
+            .donate-title {
+                font-size: 2rem;
+            }
+            
+            .donate-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .donate-description {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .donation-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .donation-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .donate-container {
+                margin: 80px auto 15px;
+                padding: 15px 10px;
+            }
+            
+            .donate-title {
+                font-size: 1.8rem;
+            }
+            
+            .donate-subtitle {
+                font-size: 1rem;
+            }
+            
+            .donation-card {
+                width: 280px;
+            }
+            
+            #preset-amounts {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .table-row {
+                display: contents;
+            }
+            
+            #preset-amounts .amount-btn {
+                display: block;
+                width: 100%;
+            }
+            
+            .impact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
