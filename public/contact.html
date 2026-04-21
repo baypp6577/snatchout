@@ -149,6 +149,11 @@
     <div id="footer-include"></div>
 
     <script>
+        // Include footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-include').innerHTML = data);
+        
         // Eventbrite integration
         function openEventbrite() {
             window.open('https://snatchout.eventbrite.co.uk', '_blank');

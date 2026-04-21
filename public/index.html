@@ -974,6 +974,11 @@
     <div id="footer-include"></div>
 
     <script>
+        // Include footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-include').innerHTML = data);
+        
         // Mobile menu toggle
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
