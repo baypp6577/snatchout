@@ -246,111 +246,48 @@
             </p>
         </div>
         
-        <!-- Choose Your Donation Method -->
+        <!-- Simple Donation Flow -->
         <div class="donation-options">
-            <!-- Embedded PayPal Campaign Card -->
             <div class="donation-card">
                 <div class="impact-icon">
-                    <i class="fas fa-window-maximize"></i>
+                    <i class="fas fa-heart"></i>
                 </div>
-                <h3 class="card-title">Quick Donate Option</h3>
-                <p class="card-description">Select amount here, then complete payment on PayPal's secure site</p>
+                <h3 class="card-title">Support SnatchOut 2026</h3>
+                <p class="card-description">Your donation helps us spread the Gospel across UK communities</p>
                 
-                <!-- Custom Amount Input -->
                 <div style="margin: 20px 0;">
-                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 20px; border-radius: 10px; border: 2px solid #667eea;">
-                        <div style="text-align: center; margin-bottom: 20px;">
+                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 30px; border-radius: 15px; border: 2px solid #667eea;">
+                        <div style="text-align: center; margin-bottom: 30px;">
                             <h4 style="color: #333; margin-bottom: 10px;">Choose Your Donation Amount</h4>
+                            <p style="color: #666; font-size: 0.9rem;">Every gift helps us reach more people for Christ</p>
                         </div>
                         
                         <!-- Preset Amount Buttons -->
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 12px; color: #333; font-weight: 600;">Quick Amount Selection:</label>
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
-                                <button onclick="setAmount(10)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£10</button>
-                                <button onclick="setAmount(25)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£25</button>
-                                <button onclick="setAmount(50)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£50</button>
-                                <button onclick="setAmount(100)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£100</button>
-                                <button onclick="setAmount(250)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£250</button>
-                                <button onclick="setAmount(500)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£500</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Payment Method Selection -->
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 12px; color: #333; font-weight: 600;">Select Payment Method:</label>
-                            <div style="display: flex; flex-direction: column; gap: 10px;">
-                                <label style="display: flex; align-items: center; padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
-                                    <input type="radio" name="paymentMethod" value="paypal" checked style="margin-right: 12px;">
-                                    <i class="fab fa-paypal" style="margin-right: 8px; color: #0070ba; font-size: 1.2rem;"></i>
-                                    <span style="font-weight: 600;">PayPal</span>
-                                </label>
-                                <label style="display: flex; align-items: center; padding: 12px; border: 2px solid #e9ecef; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; opacity: 0.6;">
-                                    <input type="radio" name="paymentMethod" value="stripe" disabled style="margin-right: 12px;">
-                                    <i class="fab fa-stripe" style="margin-right: 8px; color: #635bff; font-size: 1.2rem;"></i>
-                                    <span style="font-weight: 600;">Stripe (Coming Soon)</span>
-                                </label>
-                                <label style="display: flex; align-items: center; padding: 12px; border: 2px solid #e9ecef; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; opacity: 0.6;">
-                                    <input type="radio" name="paymentMethod" value="bank" disabled style="margin-right: 12px;">
-                                    <i class="fas fa-university" style="margin-right: 8px; color: #28a745; font-size: 1.2rem;"></i>
-                                    <span style="font-weight: 600;">Bank Transfer (Coming Soon)</span>
-                                </label>
-                            </div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 25px;">
+                            <button onclick="setAmount(10)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£10</button>
+                            <button onclick="setAmount(25)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£25</button>
+                            <button onclick="setAmount(50)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£50</button>
+                            <button onclick="setAmount(100)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£100</button>
+                            <button onclick="setAmount(250)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£250</button>
+                            <button onclick="setAmount(500)" style="padding: 15px; border: 2px solid #667eea; background: white; border-radius: 10px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; font-size: 1rem;">£500</button>
                         </div>
                         
                         <!-- Custom Amount Input -->
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 600;">Or enter custom amount:</label>
-                            <input type="number" id="customAmountInput" placeholder="Enter amount (£)" min="1" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 10px; color: #333; font-weight: 600;">Or enter custom amount:</label>
+                            <input type="number" id="customAmountInput" placeholder="Enter amount (£)" min="1" style="width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1.1rem;">
                         </div>
                         
                         <!-- Donate Button -->
-                        <button onclick="openPayPalWithAmount()" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
-                            <i class="fas fa-heart"></i> Donate Now
+                        <button onclick="openPayPalWithAmount()" style="width: 100%; padding: 18px; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);">
+                            <i class="fas fa-heart"></i> Donate Now with PayPal
                         </button>
                         
-                                            </div>
-                </div>
-                
-                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
-                    <i class="fas fa-info-circle"></i> Quick amount selection - secure payment on PayPal
-                </p>
-            </div>
-            
-            <!-- External PayPal Option -->
-            <div class="donation-card">
-                <div class="impact-icon">
-                    <i class="fas fa-external-link-alt"></i>
-                </div>
-                <h3 class="card-title">Donate on PayPal Site</h3>
-                <p class="card-description">Visit PayPal's secure website for the full donation experience</p>
-                
-                <!-- QR Code Section -->
-                <div style="margin: 20px 0; text-align: center;">
-                    <div style="background: white; padding: 15px; border-radius: 10px; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC" 
-                             alt="PayPal Donation QR Code" 
-                             style="border: none; border-radius: 5px;">
-                        <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #666;">
-                            <i class="fas fa-qrcode"></i> Scan to donate
+                        <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">
+                            <i class="fas fa-lock"></i> Secure payment via PayPal - You'll enter your amount on PayPal's site
                         </p>
                     </div>
                 </div>
-                
-                <a href="https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC" target="_blank" class="direct-link-btn" style="margin: 20px 0; display: inline-block;">
-                    <i class="fab fa-paypal"></i>
-                    Go to PayPal Site
-                </a>
-                <div style="margin-top: 20px;">
-                    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-                        <input type="hidden" name="campaign_id" value="ESNEED9LBFPNC" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                    </form>
-                </div>
-                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
-                    <i class="fas fa-info-circle"></i> Opens PayPal.com in new tab for full features
-                </p>
             </div>
         </div>
         
@@ -362,8 +299,8 @@
                     <div class="impact-icon">
                         <i class="fas fa-music"></i>
                     </div>
-                    <h3>Quality Worship</h3>
-                    <p class="impact-text">Support professional sound and production for powerful worship experiences</p>
+                    <h3>Transformative Worship</h3>
+                    <p class="impact-text">Professional sound and production that draws people closer to Father, Christ, and the Holy Spirit</p>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">
@@ -376,8 +313,8 @@
                     <div class="impact-icon">
                         <i class="fas fa-microphone"></i>
                     </div>
-                    <h3>Guest Ministers</h3>
-                    <p class="impact-text">Bring anointed speakers and worship leaders to bless our communities</p>
+                    <h3>Anointed Ministry</h3>
+                    <p class="impact-text">Host anointed speakers and worship leaders with exemplary holy living to bless our communities</p>
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">
@@ -398,7 +335,7 @@
             </div>
             <div class="faq-item">
                 <div class="faq-question">Is my donation tax-deductible?</div>
-                <div class="faq-answer">SnatchOut is a faith-based event. Please consult with your tax advisor regarding the deductibility of charitable donations in your jurisdiction.</div>
+                <div class="faq-answer">SnatchOut is a project of Evangelists for Christ Ministries, a registered charity. UK taxpayers can claim tax relief on charitable donations through: Self Assessment tax returns, contacting HMRC to adjust tax code, or via their tax advisor. Please contact us at info@snatchout.com if you need a donation receipt for tax purposes.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Can I donate by other methods?</div>
@@ -432,7 +369,7 @@
             }
         });
         
-        // Payment method and donation functions
+        // Simplified donation functions
         let selectedAmount = 0;
         
         function setAmount(amount) {
@@ -444,7 +381,7 @@
             buttons.forEach(btn => {
                 const btnAmount = btn.getAttribute('onclick').match(/\d+/)[0];
                 if (btnAmount == amount) {
-                    btn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    btn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
                     btn.style.color = 'white';
                 } else {
                     btn.style.background = 'white';
@@ -456,29 +393,20 @@
         function openPayPalWithAmount() {
             const customInput = document.getElementById('customAmountInput').value;
             const donationAmount = customInput || selectedAmount;
-            const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
             
             if (!donationAmount || donationAmount <= 0) {
                 alert('Please select or enter a donation amount');
                 return;
             }
             
-            if (selectedPaymentMethod === 'paypal') {
-                // PayPal donation
-                const paypalUrl = `https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC`;
-                
-                // Show user reminder of their selected amount
-                const confirmDonate = confirm(`You selected £${donationAmount}. Click OK to open PayPal where you'll enter this amount.`);
-                
-                if (confirmDonate) {
-                    window.open(paypalUrl, '_blank');
-                }
-            } else if (selectedPaymentMethod === 'stripe') {
-                // Stripe payment (future implementation)
-                alert('Stripe payments coming soon! Please use PayPal for now.');
-            } else if (selectedPaymentMethod === 'bank') {
-                // Bank transfer (future implementation)
-                alert('Bank transfers coming soon! Please use PayPal for now.');
+            // Open PayPal donation
+            const paypalUrl = `https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC`;
+            
+            // Show user reminder of their selected amount
+            const confirmDonate = confirm(`You selected £${donationAmount}. Click OK to open PayPal where you'll enter this amount.`);
+            
+            if (confirmDonate) {
+                window.open(paypalUrl, '_blank');
             }
         }
         
@@ -490,29 +418,6 @@
             buttons.forEach(btn => {
                 btn.style.background = 'white';
                 btn.style.color = '#333';
-            });
-        });
-        
-        // Handle payment method selection
-        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                // Update visual styles for selected payment method
-                document.querySelectorAll('input[name="paymentMethod"]').forEach(r => {
-                    const label = r.parentElement;
-                    if (r.checked) {
-                        label.style.borderColor = '#667eea';
-                        label.style.background = 'white';
-                        label.style.opacity = '1';
-                    } else if (r.disabled) {
-                        label.style.borderColor = '#e9ecef';
-                        label.style.background = '#f8f9fa';
-                        label.style.opacity = '0.6';
-                    } else {
-                        label.style.borderColor = '#e9ecef';
-                        label.style.background = 'white';
-                        label.style.opacity = '1';
-                    }
-                });
             });
         });
         
