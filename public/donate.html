@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - SnatchOut 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Support SnatchOut 2026 and beyond. Your donation helps us spread the Gospel across UK communities through worship events.">
+    <meta name="keywords" content="donate, SnatchOut 2026, Gospel, UK communities, worship, Christian event">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    
+    <style>
+        .donate-container {
+            max-width: 1200px;
+            margin: 120px auto 40px;
+            padding: 40px 20px;
+        }
+        
+        .donate-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .donate-title {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .donate-subtitle {
+            font-size: 1.3rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .donate-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .donation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .card-description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .paypal-iframe-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .paypal-iframe {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .paypal-form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .direct-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .direct-link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .impact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .impact-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .impact-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .impact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .impact-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .faq-section {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .faq-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .donate-container {
+                margin: 100px 20px 40px;
+                padding: 20px;
+            }
+            
+            .donate-title {
+                font-size: 2rem;
+            }
+            
+            .donate-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .donation-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .paypal-iframe-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Include -->
+    <div id="nav-include"></div>
+    
+    <div class="donate-container">
+        <div class="donate-header">
+            <h1 class="donate-title">Support SnatchOut 2026</h1>
+            <p class="donate-subtitle">Help us spread the Gospel across UK communities</p>
+            <p class="donate-description">
+                Support SnatchOut 2026 & beyond! Your donation covers event expenses to reach UK communities for Christ. 
+                Every gift helps us unite believers in worship, equip saints for ministry, and win souls to Christ.
+            </p>
+        </div>
+        
+        <!-- Choose Your Donation Method -->
+        <div class="donation-options">
+            <!-- Embedded PayPal Campaign Card -->
+            <div class="donation-card">
+                <div class="impact-icon">
+                    <i class="fas fa-window-maximize"></i>
+                </div>
+                <h3 class="card-title">Quick Donate Option</h3>
+                <p class="card-description">Select amount here, then complete payment on PayPal's secure site</p>
+                
+                <!-- Custom Amount Input -->
+                <div style="margin: 20px 0;">
+                    <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 20px; border-radius: 10px; border: 2px solid #667eea;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <h4 style="color: #333; margin-bottom: 10px;">Choose Your Donation Amount</h4>
+                        </div>
+                        
+                        <!-- Preset Amount Buttons -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 12px; color: #333; font-weight: 600;">Quick Amount Selection:</label>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+                                <button onclick="setAmount(10)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£10</button>
+                                <button onclick="setAmount(25)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£25</button>
+                                <button onclick="setAmount(50)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£50</button>
+                                <button onclick="setAmount(100)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£100</button>
+                                <button onclick="setAmount(250)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£250</button>
+                                <button onclick="setAmount(500)" style="padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">£500</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Method Selection -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 12px; color: #333; font-weight: 600;">Select Payment Method:</label>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <label style="display: flex; align-items: center; padding: 12px; border: 2px solid #667eea; background: white; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    <input type="radio" name="paymentMethod" value="paypal" checked style="margin-right: 12px;">
+                                    <i class="fab fa-paypal" style="margin-right: 8px; color: #0070ba; font-size: 1.2rem;"></i>
+                                    <span style="font-weight: 600;">PayPal</span>
+                                </label>
+                                <label style="display: flex; align-items: center; padding: 12px; border: 2px solid #e9ecef; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; opacity: 0.6;">
+                                    <input type="radio" name="paymentMethod" value="stripe" disabled style="margin-right: 12px;">
+                                    <i class="fab fa-stripe" style="margin-right: 8px; color: #635bff; font-size: 1.2rem;"></i>
+                                    <span style="font-weight: 600;">Stripe (Coming Soon)</span>
+                                </label>
+                                <label style="display: flex; align-items: center; padding: 12px; border: 2px solid #e9ecef; background: #f8f9fa; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; opacity: 0.6;">
+                                    <input type="radio" name="paymentMethod" value="bank" disabled style="margin-right: 12px;">
+                                    <i class="fas fa-university" style="margin-right: 8px; color: #28a745; font-size: 1.2rem;"></i>
+                                    <span style="font-weight: 600;">Bank Transfer (Coming Soon)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Custom Amount Input -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #333; font-weight: 600;">Or enter custom amount:</label>
+                            <input type="number" id="customAmountInput" placeholder="Enter amount (£)" min="1" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        
+                        <!-- Donate Button -->
+                        <button onclick="openPayPalWithAmount()" style="width: 100%; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease;">
+                            <i class="fas fa-heart"></i> Donate Now
+                        </button>
+                        
+                                            </div>
+                </div>
+                
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                    <i class="fas fa-info-circle"></i> Quick amount selection - secure payment on PayPal
+                </p>
+            </div>
+            
+            <!-- External PayPal Option -->
+            <div class="donation-card">
+                <div class="impact-icon">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+                <h3 class="card-title">Donate on PayPal Site</h3>
+                <p class="card-description">Visit PayPal's secure website for the full donation experience</p>
+                
+                <!-- QR Code Section -->
+                <div style="margin: 20px 0; text-align: center;">
+                    <div style="background: white; padding: 15px; border-radius: 10px; display: inline-block; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC" 
+                             alt="PayPal Donation QR Code" 
+                             style="border: none; border-radius: 5px;">
+                        <p style="margin: 10px 0 0 0; font-size: 0.8rem; color: #666;">
+                            <i class="fas fa-qrcode"></i> Scan to donate
+                        </p>
+                    </div>
+                </div>
+                
+                <a href="https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC" target="_blank" class="direct-link-btn" style="margin: 20px 0; display: inline-block;">
+                    <i class="fab fa-paypal"></i>
+                    Go to PayPal Site
+                </a>
+                <div style="margin-top: 20px;">
+                    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                        <input type="hidden" name="campaign_id" value="ESNEED9LBFPNC" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
+                </div>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+                    <i class="fas fa-info-circle"></i> Opens PayPal.com in new tab for full features
+                </p>
+            </div>
+        </div>
+        
+        <!-- Impact Section -->
+        <div class="impact-section">
+            <h2 class="impact-title">Your Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Quality Worship</h3>
+                    <p class="impact-text">Support professional sound and production for powerful worship experiences</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Access</h3>
+                    <p class="impact-text">Make events accessible to everyone regardless of financial situation</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Guest Ministers</h3>
+                    <p class="impact-text">Bring anointed speakers and worship leaders to bless our communities</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Refreshments</h3>
+                    <p class="impact-text">Provide hospitality and refreshments for our attendees</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">Where does my donation go?</div>
+                <div class="faq-answer">Your donation covers event expenses including venue rental, sound equipment, guest minister honorariums, and refreshments - all to make the Gospel accessible to everyone.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is my donation tax-deductible?</div>
+                <div class="faq-answer">SnatchOut is a faith-based event. Please consult with your tax advisor regarding the deductibility of charitable donations in your jurisdiction.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I donate by other methods?</div>
+                <div class="faq-answer">Currently we accept donations through PayPal. For other donation methods, please contact us at info@snatchout.com.</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
+    
+    <script>
+        // Include navigation and footer
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav-include').innerHTML = data);
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-include').innerHTML = data);
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (nav && window.scrollY > 50) {
+                nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else if (nav) {
+                nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+        
+        // Payment method and donation functions
+        let selectedAmount = 0;
+        
+        function setAmount(amount) {
+            selectedAmount = amount;
+            document.getElementById('customAmountInput').value = amount;
+            
+            // Update button styles
+            const buttons = document.querySelectorAll('button[onclick^="setAmount"]');
+            buttons.forEach(btn => {
+                const btnAmount = btn.getAttribute('onclick').match(/\d+/)[0];
+                if (btnAmount == amount) {
+                    btn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    btn.style.color = 'white';
+                } else {
+                    btn.style.background = 'white';
+                    btn.style.color = '#333';
+                }
+            });
+        }
+        
+        function openPayPalWithAmount() {
+            const customInput = document.getElementById('customAmountInput').value;
+            const donationAmount = customInput || selectedAmount;
+            const selectedPaymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            
+            if (!donationAmount || donationAmount <= 0) {
+                alert('Please select or enter a donation amount');
+                return;
+            }
+            
+            if (selectedPaymentMethod === 'paypal') {
+                // PayPal donation
+                const paypalUrl = `https://www.paypal.com/donate?campaign_id=ESNEED9LBFPNC`;
+                
+                // Show user reminder of their selected amount
+                const confirmDonate = confirm(`You selected £${donationAmount}. Click OK to open PayPal where you'll enter this amount.`);
+                
+                if (confirmDonate) {
+                    window.open(paypalUrl, '_blank');
+                }
+            } else if (selectedPaymentMethod === 'stripe') {
+                // Stripe payment (future implementation)
+                alert('Stripe payments coming soon! Please use PayPal for now.');
+            } else if (selectedPaymentMethod === 'bank') {
+                // Bank transfer (future implementation)
+                alert('Bank transfers coming soon! Please use PayPal for now.');
+            }
+        }
+        
+        // Handle custom amount input
+        document.getElementById('customAmountInput').addEventListener('input', function() {
+            selectedAmount = 0;
+            // Reset button styles
+            const buttons = document.querySelectorAll('button[onclick^="setAmount"]');
+            buttons.forEach(btn => {
+                btn.style.background = 'white';
+                btn.style.color = '#333';
+            });
+        });
+        
+        // Handle payment method selection
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Update visual styles for selected payment method
+                document.querySelectorAll('input[name="paymentMethod"]').forEach(r => {
+                    const label = r.parentElement;
+                    if (r.checked) {
+                        label.style.borderColor = '#667eea';
+                        label.style.background = 'white';
+                        label.style.opacity = '1';
+                    } else if (r.disabled) {
+                        label.style.borderColor = '#e9ecef';
+                        label.style.background = '#f8f9fa';
+                        label.style.opacity = '0.6';
+                    } else {
+                        label.style.borderColor = '#e9ecef';
+                        label.style.background = 'white';
+                        label.style.opacity = '1';
+                    }
+                });
+            });
+        });
+        
+            </script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Donation - SnatchOut 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Thank you for your generous donation to SnatchOut 2026. Your support helps us create an amazing worship experience.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    
+    <style>
+        .thanks-container {
+            max-width: 700px;
+            margin: 120px auto 40px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .thanks-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            background-size: 200% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .thanks-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .thanks-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .thanks-subtitle {
+            font-size: 1.3rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .thanks-message {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .impact-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .impact-title {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .impact-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .impact-item i {
+            color: #27ae60;
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+        
+        .impact-text {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .next-steps {
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .next-steps-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .next-steps-list li i {
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .action-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .social-share {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .social-share h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-facebook {
+            background: #3b5998;
+        }
+        
+        .social-twitter {
+            background: #1da1f2;
+        }
+        
+        .social-whatsapp {
+            background: #25d366;
+        }
+        
+        @media (max-width: 768px) {
+            .thanks-container {
+                margin: 100px 20px 40px;
+                padding: 30px 20px;
+            }
+            
+            .thanks-title {
+                font-size: 2rem;
+            }
+            
+            .thanks-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .impact-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Include -->
+    <div id="nav-include"></div>
+    
+    <div class="thanks-container">
+        <div class="thanks-icon">
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <h1 class="thanks-title">Thank You!</h1>
+        <p class="thanks-subtitle">Your generosity makes SnatchOut 2026 possible</p>
+        
+        <p class="thanks-message">
+            We're incredibly grateful for your donation to SnatchOut 2026. Your support helps us create an unforgettable 
+            worship experience where people can encounter God's presence through powerful music, ministry, and community.
+        </p>
+        
+        <div class="impact-section">
+            <h3 class="impact-title">Your Impact</h3>
+            <div class="impact-items">
+                <div class="impact-item">
+                    <i class="fas fa-music"></i>
+                    <span class="impact-text">Quality sound and production</span>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-users"></i>
+                    <span class="impact-text">Accessible venue for everyone</span>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-microphone"></i>
+                    <span class="impact-text">Supporting guest ministers</span>
+                </div>
+                <div class="impact-item">
+                    <i class="fas fa-coffee"></i>
+                    <span class="impact-text">Refreshments for attendees</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="next-steps">
+            <h3>What's Next?</h3>
+            <ul class="next-steps-list">
+                <li><i class="fas fa-envelope"></i> You'll receive a confirmation email shortly</li>
+                <li><i class="fas fa-ticket-alt"></i> Your event ticket is confirmed for April 25th</li>
+                <li><i class="fas fa-calendar"></i> We'll send event reminders as the date approaches</li>
+                <li><i class="fas fa-heart"></i> You're making a difference in our community</li>
+            </ul>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="/" class="action-btn btn-primary">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="artists.html" class="action-btn btn-secondary">
+                <i class="fas fa-play"></i> Watch Artist Videos
+            </a>
+        </div>
+        
+        <div class="social-share">
+            <h4>Share Your Support</h4>
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://snatchout.com" target="_blank" class="social-btn social-facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=I just donated to SnatchOut 2026! Join us for an amazing worship experience on April 25th in Nottingham. #SnatchOut2026" target="_blank" class="social-btn social-twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://wa.me/?text=I just donated to SnatchOut 2026! Join us for an amazing worship experience on April 25th in Nottingham. https://snatchout.com" target="_blank" class="social-btn social-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
+    
+    <script>
+        // Include navigation and footer
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav-include').innerHTML = data);
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-include').innerHTML = data);
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (nav && window.scrollY > 50) {
+                nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else if (nav) {
+                nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+        
+        // Celebration confetti effect
+        function createConfetti() {
+            const colors = ['#667eea', '#764ba2', '#27ae60', '#ffd700', '#ff6b6b'];
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.cssText = `
+                        position: fixed;
+                        top: -10px;
+                        left: ${Math.random() * 100}%;
+                        width: 10px;
+                        height: 10px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius: 50%;
+                        z-index: 9999;
+                        animation: fall ${3 + Math.random() * 2}s linear;
+                    `;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 50);
+            }
+        }
+        
+        // Add falling animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Trigger confetti on page load
+        window.addEventListener('load', () => {
+            setTimeout(createConfetti, 500);
+        });
+    </script>
+</body>
+</html>

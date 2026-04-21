@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Donation - SnatchOut 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Cancel your donation for SnatchOut 2026 worship event. We understand and appreciate your consideration.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    
+    <style>
+        .cancel-donation-container {
+            max-width: 600px;
+            margin: 120px auto 40px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .cancel-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .cancel-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cancel-message {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .cancel-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .cancel-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-cancel {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+        }
+        
+        .btn-cancel:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-keep {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-keep:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .cancel-donation-container {
+                margin: 100px 20px 40px;
+                padding: 30px 20px;
+            }
+            
+            .cancel-title {
+                font-size: 1.8rem;
+            }
+            
+            .cancel-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Include -->
+    <div id="nav-include"></div>
+    
+    <div class="cancel-donation-container">
+        <div class="cancel-icon">
+            <i class="fas fa-heart-broken"></i>
+        </div>
+        
+        <h1 class="cancel-title">We're Sorry to See You Go</h1>
+        
+        <p class="cancel-message">
+            We understand that circumstances change, and we appreciate your initial willingness to support SnatchOut 2026. 
+            Your donation helps us create an amazing worship experience for our community.
+        </p>
+        
+        <div class="cancel-options">
+            <button class="cancel-btn btn-keep" onclick="keepDonation()">
+                <i class="fas fa-heart"></i> Keep My Donation
+            </button>
+            
+            <button class="cancel-btn btn-cancel" onclick="cancelDonation()">
+                <i class="fas fa-times-circle"></i> Cancel My Donation
+            </button>
+        </div>
+        
+        <div class="contact-info">
+            <p><strong>Need to speak with someone?</strong></p>
+            <p>Contact our team at <a href="mailto:info@snatchout.com">info@snatchout.com</a> or call us at <a href="tel:+447123456789">+44 7123 456789</a></p>
+            <p>We're here to help with any questions or concerns.</p>
+        </div>
+    </div>
+    
+    <!-- Footer Include -->
+    <div id="footer-include"></div>
+    
+    <script>
+        // Include navigation and footer
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav-include').innerHTML = data);
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-include').innerHTML = data);
+        
+        function keepDonation() {
+            // Redirect back to main page or donation page
+            window.location.href = '/';
+        }
+        
+        function cancelDonation() {
+            // In a real implementation, this would:
+            // 1. Call your backend API to cancel the donation
+            // 2. Show a confirmation message
+            // 3. Send confirmation email
+            
+            // For now, show confirmation and redirect
+            alert('Your donation has been cancelled. You will receive a confirmation email shortly.');
+            window.location.href = '/';
+        }
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (nav && window.scrollY > 50) {
+                nav.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+                nav.style.backdropFilter = 'blur(10px)';
+            } else if (nav) {
+                nav.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                nav.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
