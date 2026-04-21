@@ -499,29 +499,8 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-calendar-star"></i>
-                SnatchOut
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#events">Events</a></li>
-                <li><a href="artists.html" class="active">Artists</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="#" class="eventbrite-btn" onclick="openEventbrite()">
-                    <i class="fab fa-eventbrite"></i> Eventbrite
-                </a></li>
-            </ul>
-            <div class="mobile-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Include -->
+    <div id="nav-include"></div>
 
     <!-- Videos Section -->
     <section class="videos-section" style="margin-top: 70px; padding: 20px 20px 60px 20px;">
@@ -717,6 +696,15 @@
     <div id="footer-include"></div>
 
     <script>
+        // Include navigation and footer
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('nav-include').innerHTML = data);
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-include').innerHTML = data);
+        
         // Mobile menu toggle
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
