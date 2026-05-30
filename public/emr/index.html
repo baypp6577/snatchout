@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Join the Drop Group | SnatchOut 2026</title>
+    
+    <meta name="description" content="Secure your spot in the standby group. Exact coordinates for the Emirates Gospel Outreach drop here first.">
+    <meta name="theme-color" content="#EF0107">
+    
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Intl-Tel-Input CSS for Phone Validation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    
+    <!-- SnatchOut Global Styles -->
+    <link rel="stylesheet" href="/styles-v1.css">
+
+    <style>
+        /* Mobile-First Custom Styles */
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .emr-header {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 20px 15px;
+            border-bottom: 4px solid #EF0107; /* Gunners Red */
+        }
+
+        .emr-header h1 {
+            margin: 0;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .emr-header p {
+            color: #aaa;
+            margin: 5px 0 0 0;
+            font-size: 14px;
+        }
+
+        .form-container {
+            background: #fff;
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        .warning-box {
+            background-color: #fff9f9;
+            border-left: 4px solid #EF0107;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .warning-box strong {
+            color: #EF0107;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #111;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px; /* 16px prevents iOS auto-zoom */
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #EF0107;
+        }
+
+        /* Fix for Intl-Tel-Input width */
+        .iti { width: 100%; }
+
+        .submit-btn {
+            background-color: #EF0107;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #cc0000;
+        }
+
+        .submit-btn:disabled {
+            background-color: #ff9999;
+            cursor: not-allowed;
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="emr-header">
+        <h1><i class="fas fa-map-marker-alt" style="color: #EF0107;"></i> SnatchOut Standby</h1>
+        <p>Emirates Gospel Outreach • Sunday, May 31</p>
+    </div>
+
+    <!-- Form Area -->
+    <div class="form-container">
+        <div class="warning-box">
+            <strong><i class="fas fa-lock"></i> Classified Location</strong>
+            Fill out the form below to unlock access to our private WhatsApp Community. The exact deployment coordinates will be dropped there.
+        </div>
+
+        <form id="dropGroupForm">
+            <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. David" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">WhatsApp Mobile Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div id="phone-error" style="color: #EF0107; font-size: 12px; margin-top: 5px; display: none;">Please enter a valid mobile number.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address (Optional)</label>
+                <input type="email" id="email" name="email" placeholder="For future event invites">
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Get The Coordinates <i class="fab fa-whatsapp" style="font-size: 20px;"></i>
+            </button>
+            
+            <p class="privacy-note">By joining, you will be redirected to the official SnatchOut WhatsApp Community.</p>
+        </form>
+    </div>
+
+    <!-- Intl-Tel-Input JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    
+    <script>
+        // Initialize the phone input formatter
+        const phoneInputField = document.querySelector("#phone");
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            preferredCountries: ["gb", "us", "ng"], // Defaults to UK flag
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+
+        const form = document.getElementById("dropGroupForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const errorMsg = document.getElementById("phone-error");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop normal submission
+
+            // Validate phone number format
+            if (!phoneInput.isValidNumber()) {
+                errorMsg.style.display = "block";
+                phoneInputField.style.borderColor = "#EF0107";
+                return; // Stop if invalid
+            }
+
+            // Hide error if valid
+            errorMsg.style.display = "none";
+            phoneInputField.style.borderColor = "#ddd";
+
+            // Visual feedback for the user
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Securing Access...';
+            submitBtn.disabled = true;
+
+            // 1. Capture Data
+            const formData = new FormData(form);
+            // Append the fully formatted international number to the data
+            formData.append("full_phone_number", phoneInput.getNumber());
+
+            /* 
+             * 2. SEND DATA TO YOUR SERVER HERE 
+             * Example:
+             * fetch('https://your-api-endpoint.com/webhook', { method: 'POST', body: formData })
+             * .then(() => { execute redirection below })
+             */
+
+            // 3. Redirect to the WhatsApp Community
+            setTimeout(() => {
+                window.location.href = "https://chat.whatsapp.com/HDQqbzMMahyBRTEuflrJHT";
+            }, 800); // Slight delay so the user sees the "Securing Access..." button state
+        });
+
+        // Clear error styling when user starts typing again
+        phoneInputField.addEventListener("keyup", function() {
+            errorMsg.style.display = "none";
+            phoneInputField.style.borderColor = "#ddd";
+        });
+    </script>
+</body>
+</html>
