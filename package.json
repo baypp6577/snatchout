@@ -10,25 +10,6 @@
     "dev-auto": "npx http-server public -a localhost -o --cors",
     "deploy": "vercel --prod"
   },
-  "builds": [
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static",
-      "config": {
-        "distDir": "public"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
-  ],
-  "files": [
-    "dist",
-    "public"
-  ],
   "keywords": [
     "event",
     "management",
