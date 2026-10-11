@@ -23,7 +23,10 @@ async function submitSnatchoutContact(form) {
       body: JSON.stringify({ name, email, message, website }),
     })
     const data = await res.json().catch(() => ({}))
-    if (!res.ok) throw new Error(data.error || 'Could not send message')
+    if (!res.ok) {
+      const detail = typeof data.detail === 'string' && data.detail ? ` (${data.detail})` : ''
+      throw new Error((data.error || 'Could not send message') + detail)
+    }
     form.reset()
     setStatus('Thank you - your message has been sent.', true)
   } catch (err) {
