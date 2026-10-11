@@ -221,10 +221,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const safeMessage = escapeHtml(message).replace(/\n/g, '<br />')
 
   const html = `<!DOCTYPE html><html><body style="font-family:Arial,sans-serif;color:#222;line-height:1.5;">
-  <p style="margin:0 0 8px;">
-    <img src="https://www.snatchout.com/images/2026_snatchout.jpeg" alt="SnatchOut" width="220" style="display:block;border:0;max-width:100%;height:auto;" />
+  <p style="margin:0 0 12px;">
+    <img src="https://www.snatchout.com/images/snatchout-logo.jpg" alt="SnatchOut" width="200" style="display:block;border:0;max-width:100%;height:auto;" />
   </p>
-  <p style="margin:0 0 16px;font-size:18px;font-weight:700;letter-spacing:0.04em;">SnatchOut</p>
   <h2 style="margin:0 0 12px;">Website contact</h2>
   <p style="margin:0 0 8px;"><strong>Name:</strong> ${safeName}</p>
   <p style="margin:0 0 8px;"><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
