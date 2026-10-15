@@ -1,11 +1,9 @@
 /**
- * SnatchOut contact form → live mother mailer (Abbey-style) → bay192@gmail.com
+ * SnatchOut contact form → live mother mailer only → bay192@gmail.com
  *
- * Vercel Production must set one of:
- *   MOTHER_EMAIL_SECRET (or FRONT_EMAIL_SECRET / HTNET_EMAIL_SECRET)
+ * Vercel Production must set:
+ *   MOTHER_EMAIL_SECRET (or FRONT_EMAIL_SECRET)
  * plus MOTHER_SITE_TOKEN (preferred on Vercel) OR MOTHER_DEVICE_ID + MOTHER_DEVICE_TOKEN
- *
- * Optional fallback: HTNET_EMAIL_SECRET alone → htnet send-email.jsp
  *
  * Deploy: vercel --prod
  */
@@ -14,7 +12,6 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 const MOTHER_EMAIL_API = (
   process.env.MOTHER_EMAIL_API || 'https://hometolive.com/api/front/send-email.jsp'
 ).trim()
-const HTNET_EMAIL_API = 'https://htnet.hometolive.com/api/htnet/send-email.jsp'
 const CONTACT_TO = 'bay192@gmail.com'
 
 const rateLimitMap = new Map<string, number[]>()
@@ -54,7 +51,6 @@ function mailSecret(): string {
   return (
     process.env.MOTHER_EMAIL_SECRET ||
     process.env.FRONT_EMAIL_SECRET ||
-    process.env.HTNET_EMAIL_SECRET ||
     ''
   ).trim()
 }
@@ -113,51 +109,6 @@ async function sendViaMother(opts: {
   }
 }
 
-async function sendViaHtnet(opts: {
-  to: string
-  subject: string
-  body: string
-}): Promise<{ ok: boolean; status: number; text: string; via: string }> {
-  const secret = mailSecret()
-  if (!secret) {
-    return { ok: false, status: 500, text: 'Mail secret not configured', via: 'htnet' }
-  }
-
-  const params = new URLSearchParams()
-  params.set('to', opts.to)
-  params.set('subject', opts.subject)
-  params.set('body', opts.body)
-  params.set('html', '1')
-  params.set('secret', secret)
-  params.set('brand', 'snatchout')
-  params.set('replyto', 'bay192@gmail.com')
-
-  const res = await fetch(HTNET_EMAIL_API, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'X-Htnet-Secret': secret,
-      Origin: 'https://snatchout.com',
-      Referer: 'https://snatchout.com/',
-    },
-    body: params.toString(),
-  })
-  const text = await res.text()
-  let parsed: { ok?: boolean; success?: boolean; error?: string } = {}
-  try {
-    parsed = JSON.parse(text) as { ok?: boolean; success?: boolean; error?: string }
-  } catch {
-    parsed = {}
-  }
-  const ok = res.ok && (parsed.ok === true || parsed.success === true)
-  return {
-    ok,
-    status: res.status,
-    text: (parsed.error || text).slice(0, 240),
-    via: 'htnet',
-  }
-}
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const origin = typeof req.headers.origin === 'string' ? req.headers.origin : ''
   const allow =
@@ -210,7 +161,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (!mailSecret()) {
-    console.error('snatchout contact: MOTHER_EMAIL_SECRET / HTNET_EMAIL_SECRET missing on Vercel')
+    console.error('snatchout contact: MOTHER_EMAIL_SECRET missing on Vercel')
     return res.status(503).json({
       error: 'Mail is not configured yet. Set MOTHER_EMAIL_SECRET and MOTHER_SITE_TOKEN on Vercel.',
     })
@@ -235,7 +186,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   </p>
 </body></html>`
 
-  let sent = await sendViaMother({
+  const sent = await sendViaMother({
     to: CONTACT_TO,
     subject: 'SnatchOut website contact',
     body: html,
@@ -243,15 +194,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (!sent.ok) {
     console.error('snatchout contact mother mail failed', sent.status, sent.text)
-    sent = await sendViaHtnet({
-      to: CONTACT_TO,
-      subject: 'SnatchOut website contact',
-      body: html,
-    })
-  }
-
-  if (!sent.ok) {
-    console.error('snatchout contact htnet mail failed', sent.status, sent.text)
     return res.status(502).json({
       error: 'Could not send message right now',
       detail: sent.text.slice(0, 120),

@@ -1,0 +1,15 @@
+---
+description: SnatchOut / HTL mail - live mother only, never local .env
+alwaysApply: true
+---
+
+# Client emailers (always live — never local)
+
+- Contact path: live `POST /api/contact` → mother `send-email.jsp` (`brand=snatchout`) only.
+- Secrets: **Vercel Production only** on the deployed app (`MOTHER_EMAIL_SECRET`, `MOTHER_SITE_TOKEN`).
+- **Never** use local `.env` / `.env.local` (this repo or any sibling) to send mail. No hunting laptop env files.
+- If Production secret is missing: **stop in one short sentence** and tell Adebayo to set it on Vercel — do not burn turns searching local env.
+- **No Resend fallback for now** — mother only; if mailer fails, stop and surface the error.
+- Never localhost / local Resend as the delivery path.
+
+Canonical: `D:\proj\GITREPO\AGENTS.md` → Client-facing emailers.
